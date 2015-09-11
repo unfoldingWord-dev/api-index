@@ -1,0 +1,59 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+$font-family-sans-serif: NotoSans, sans-serif !default;
+$navbar-height: 70px;
+$navbar-inverse-bg: #000000;
+
+@import "vendor/bootstrap";
+@import "fonts";
+
+body {
+    padding-top: 80px;
+    font-size: 19px;
+    line-height: 1.4;
+    font-family: NotoSans, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/**
+ * Navigation
+ */
+.navbar-header a {
+    padding: 0px;
+    margin: 0px;
+}
+.page-content {
+    padding-bottom: 20px;
+}
+/**
+ * Footer
+ */
+footer, .site-footer {
+    background-color: #000000;
+    padding: 30px 0px;
+}
+
+footer p, .site-footer p {
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    letter-spacing: 1px;
+    margin-top: 18px;
+}
+footer p img {
+    margin-bottom: 5px;
+}
+footer a {
+    color: #ffffff;
+}
+footer a:hover {
+    color: #44ace8;
+}
