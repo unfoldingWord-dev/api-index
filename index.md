@@ -1,6 +1,7 @@
 ---
 layout: side_nav
 title: UnfoldingWord - API Documentation
+side_nav: index_side_nav.html
 ---
 # API Documentation
 
@@ -14,9 +15,9 @@ Official specification for translationKeyboard API, version 1:
 
 The translationKeyboard app has a unified API endpoint.
 
-URL: http://tk.unfoldingword.org/api/v1/keyboard/
+**URL:** http://tk.unfoldingword.org/api/v1/keyboard/
 
-Example: [http://tk.unfoldingword.org/api/v1/keyboard/](http://tk.unfoldingword.org/api/v1/keyboard/)
+**Example:** [http://tk.unfoldingword.org/api/v1/keyboard/](http://tk.unfoldingword.org/api/v1/keyboard/)
 
 ~~~~~~~~
 {
@@ -38,9 +39,9 @@ Example: [http://tk.unfoldingword.org/api/v1/keyboard/](http://tk.unfoldingword.
 
 Keyboard layouts may be accessed via their id (from the above catalog), like this:
 
-URL: http://tk.unfoldingword.org/api/v1/keyboard/[id]
+**URL:** http://tk.unfoldingword.org/api/v1/keyboard/[id]
 
-Example: [http://tk.unfoldingword.org/api/v1/keyboard/5](http://tk.unfoldingword.org/api/v1/keyboard/5)
+**Example:** [http://tk.unfoldingword.org/api/v1/keyboard/5](http://tk.unfoldingword.org/api/v1/keyboard/5)
 
 ~~~~~~~~
 {
@@ -99,9 +100,9 @@ It has not been determined if a new api will be developed for images. Please ref
 
 The language catalog contains the translated project name and description along with necessary information regarding the language. Optional meta in the project provides the ability to create soft/virtual categories when viewed in the app. e.g. Bible→New Testament→Luke. NOTE: if the project specifies meta slugs the language must also provide the translated meta names. The date_modified field in the language gets it's value from the most recent date_modified value in the resources catalog. Once again this allows the app to determine if updates are available for a particular language.
 
-URL: http://api.unfoldingword.org/ts/txt/2/[book_id]/languages.json
+**URL:** http://api.unfoldingword.org/ts/txt/2/[book_id]/languages.json
 
-Example: [http://api.unfoldingword.org/ts/txt/2/luk/languages.json](http://api.unfoldingword.org/ts/txt/2/luk/languages.json)
+**Example:** [http://api.unfoldingword.org/ts/txt/2/luk/languages.json](http://api.unfoldingword.org/ts/txt/2/luk/languages.json)
 
 ~~~~~~~~
 [
@@ -140,9 +141,9 @@ Example: [http://api.unfoldingword.org/ts/txt/2/luk/languages.json](http://api.u
 
 The main catalog records resources available for translation in translationStudio. This file will always be downloaded first by the app in order to identify available updates. Please note: the date_modified field within this catalog gets it's value from the most recent date_modified value found in the languages catalog. This allows the app to determine if updates are available. You may optionally specify meta categories on a project. See the notes on the language catalog for more details. The sort field allows projects to be displayed in a sorted manner within the app. The sort value MUST be a numeric value. That is, it should be able to be parsed as an int.
 
-URL: http://api.unfoldingword.org/ts/txt/2/catalog.json
+**URL:** http://api.unfoldingword.org/ts/txt/2/catalog.json
 
-Example: [http://api.unfoldingword.org/ts/txt/2/catalog.json](http://api.unfoldingword.org/ts/txt/2/catalog.json)
+**Example:** [http://api.unfoldingword.org/ts/txt/2/catalog.json](http://api.unfoldingword.org/ts/txt/2/catalog.json)
 
 ~~~~~~~~
 [
@@ -166,9 +167,9 @@ Example: [http://api.unfoldingword.org/ts/txt/2/catalog.json](http://api.unfoldi
 
 The resource catalog contains the different types of resources available for translation. When multiple resources are present the app will supply ui controls to switch between resources. The date_modified field is updated any time the source, terms, or notes catalogs are updated. Included in each resource is status which indicates (among other things) the checking level of the resource. The app uses this to determine whether or not the resource is ready for use in the app. If there is only one resource it should be given the slug value “default” and the name can be left as an empty string.
 
-URL: http://api.unfoldingword.org/ts/txt/2/[book_id]/[language_code]/resources.json
+**URL:** http://api.unfoldingword.org/ts/txt/2/[book_id]/[language_code]/resources.json
 
-Example: [http://api.unfoldingword.org/ts/txt/2/luk/en/resources.json](http://api.unfoldingword.org/ts/txt/2/luk/en/resources.json)
+**Example:** [http://api.unfoldingword.org/ts/txt/2/luk/en/resources.json](http://api.unfoldingword.org/ts/txt/2/luk/en/resources.json)
 
 ~~~~~~~~
 [
@@ -199,9 +200,9 @@ Example: [http://api.unfoldingword.org/ts/txt/2/luk/en/resources.json](http://ap
 
 The source catalog contains all the chapters and frames of the project. The ref and title are optional. If left blank they will not be available for translation within the app. The img field is likewise optional. There is a new format field that allows you to specify the format of the frame text. For example Bible translation projects are in the usx format. Valid options for format are currently usx and txt.
 
-URL: http://api.unfoldingword.org/ts/txt/2/[book_id]/[language_code]/[bible_id]/source.json
+**URL:** http://api.unfoldingword.org/ts/txt/2/[book_id]/[language_code]/[bible_id]/source.json
 
-Example: [http://api.unfoldingword.org/ts/txt/2/luk/en/udb/source.json](http://api.unfoldingword.org/ts/txt/2/luk/en/udb/source.json)
+**Example:** [http://api.unfoldingword.org/ts/txt/2/luk/en/udb/source.json](http://api.unfoldingword.org/ts/txt/2/luk/en/udb/source.json)
 
 ~~~~~~~~
 {
@@ -232,9 +233,9 @@ Example: [http://api.unfoldingword.org/ts/txt/2/luk/en/udb/source.json](http://a
 
 Pull language information.
 
-URL: http://td.unfoldingword.org/exports/langnames.json
+**URL:** http://td.unfoldingword.org/exports/langnames.json
 
-Example: [http://td.unfoldingword.org/exports/langnames.json](http://td.unfoldingword.org/exports/langnames.json)
+**Example:** [http://td.unfoldingword.org/exports/langnames.json](http://td.unfoldingword.org/exports/langnames.json)
 
 ~~~~~~~~
 [
@@ -261,9 +262,9 @@ Official specification for unfoldingWord API, version 2:
 
 The unfoldingWord app now has a unified API endpoint.
 
-URL: http://api.unfoldingword.org/uw/txt/2/catalog.json
+**URL:** http://api.unfoldingword.org/uw/txt/2/catalog.json
 
-Example: [http://api.unfoldingword.org/uw/txt/2/catalog.json](http://api.unfoldingword.org/uw/txt/2/catalog.json)
+**Example:** [http://api.unfoldingword.org/uw/txt/2/catalog.json](http://api.unfoldingword.org/uw/txt/2/catalog.json)
 
 ~~~~~~~~
 {
@@ -319,9 +320,9 @@ Official specification for unfoldingWord API, version 1:
 
 ####App Catalog
 
-URL: http://api.unfoldingword.org/obs/txt/1/obs-catalog.json
+**URL:** http://api.unfoldingword.org/obs/txt/1/obs-catalog.json
 
-Example: [http://api.unfoldingword.org/obs/txt/1/obs-catalog.json](http://api.unfoldingword.org/obs/txt/1/obs-catalog.json)
+**Example:** [http://api.unfoldingword.org/obs/txt/1/obs-catalog.json](http://api.unfoldingword.org/obs/txt/1/obs-catalog.json)
 
 ~~~~~~~~
 [
@@ -347,9 +348,9 @@ Example: [http://api.unfoldingword.org/obs/txt/1/obs-catalog.json](http://api.un
 
 For languages that are currently in progress (from door43.org's perspective).
 
-URL: http://api.unfoldingword.org/obs/txt/1/obs-in-progress.json
+**URL:** http://api.unfoldingword.org/obs/txt/1/obs-in-progress.json
 
-Example: [http://api.unfoldingword.org/obs/txt/1/obs-in-progress.json](http://api.unfoldingword.org/obs/txt/1/obs-in-progress.json)
+**Example:** [http://api.unfoldingword.org/obs/txt/1/obs-in-progress.json](http://api.unfoldingword.org/obs/txt/1/obs-in-progress.json)
 
 ~~~~~~~~
 [
@@ -366,9 +367,9 @@ Example: [http://api.unfoldingword.org/obs/txt/1/obs-in-progress.json](http://ap
 
 ####JSON Text
 
-URL: http://api.unfoldingword.org/obs/txt/1/[language_code]/obs-[language_code].json
+**URL:** http://api.unfoldingword.org/obs/txt/1/[language_code]/obs-[language_code].json
 
-Example: [http://api.unfoldingword.org/obs/txt/1/en/obs-en.json](http://api.unfoldingword.org/obs/txt/1/en/obs-en.json)
+**Example:** [http://api.unfoldingword.org/obs/txt/1/en/obs-en.json](http://api.unfoldingword.org/obs/txt/1/en/obs-en.json)
 
 ~~~~~~~~
 {
@@ -408,14 +409,14 @@ Example: [http://api.unfoldingword.org/obs/txt/1/en/obs-en.json](http://api.unfo
 
 ####OBS Audio
 
-URL: http://api.unfoldingword.org/obs/mp3/1/[language_code]/[language_code]-obs-v[version_number]/[language_code]\_obs\_[frame].mp3
+**URL:** http://api.unfoldingword.org/obs/mp3/1/[language_code]/[language_code]-obs-v[version_number]/[language_code]\_obs\_[frame].mp3
 
-Example: [https://api.unfoldingword.org/obs/mp3/1/en/en-obs-v4/en_obs_01.mp3](https://api.unfoldingword.org/obs/mp3/1/en/en-obs-v4/en_obs_01.mp3)
+**Example:** [https://api.unfoldingword.org/obs/mp3/1/en/en-obs-v4/en_obs_01.mp3](https://api.unfoldingword.org/obs/mp3/1/en/en-obs-v4/en_obs_01.mp3)
 
 ####OBS Images
 
 Current supported height: 2160 pixels & 360 pixels.
 
-URL: http://api.unfoldingword.org/obs/jpg/1/[language_code]/[height_pixels]/obs-[langcode]-[chapter]-[frame].jpg
+**URL:** http://api.unfoldingword.org/obs/jpg/1/[language_code]/[height_pixels]/obs-[langcode]-[chapter]-[frame].jpg
 
-Example: [http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-01-01.jpg](http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-01-01.jpg)
+**Example:** [http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-01-01.jpg](http://api.unfoldingword.org/obs/jpg/1/en/2160px/obs-en-01-01.jpg)

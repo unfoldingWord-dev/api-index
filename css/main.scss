@@ -10,8 +10,11 @@ $navbar-inverse-bg: #000000;
 @import "vendor/bootstrap";
 @import "fonts";
 
+/**
+ * Standard CSS
+ */
 body {
-    padding-top: 80px;
+    padding-top: 70px;
     font-size: 19px;
     line-height: 1.4;
     font-family: NotoSans, sans-serif;
@@ -21,6 +24,54 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+h2 {
+    font-size: 32px;
+    margin: 30px 0px;
+}
+
+h3 {
+    font-size: 26px;
+    margin: 30px 0px;
+}
+
+h4 {
+    font-size: 24px;
+    margin: 30px 0px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000000; /* Or whatever color you want */
+    text-decoration: none;
+}
+
+/**
+ * Parallax
+ */
+.parallax-window {  
+    height: 650px;  
+    background: transparent;  
+    text-align: center;
+}
+#parallax-content-wrapper {
+    display: table;
+    min-height: 100%;
+    width: 100%;
+}
+
+#parallax-content {
+    display: table-cell;
+    vertical-align: middle;
+    max-width:70%;
+}
+
+#parallax-content img {
+    max-width: 70%;
+}
+
+#parallax-content p {
+    color: #ffffff;
+    text-transform: lowercase;
+    font-size: 24px;
+}
+
 /**
  * Navigation
  */
@@ -28,9 +79,99 @@ body {
     padding: 0px;
     margin: 0px;
 }
+/**
+ * Sidebar Nav
+ */
+.affix-top, .affix {
+ position: static;
+}
+
+@media (min-width: 979px) {
+  ul#sidebar-nav.affix-top {
+    position: static;
+    margin-top: 30px;
+    width: 228px;
+  }
+  
+  ul#sidebar-nav.affix {
+    position: fixed;
+    top: 80px;
+    width: 228px;
+  }
+}
+
+ul#sidebar-nav {
+    font-size: 14px;
+}
+
+ul#sidebar-nav a {
+    margin-left: 1px;
+}
+
+ul#sidebar-nav a, #sidebar a:hover {
+    text-decoration: none !important;
+    background-color: transparent;
+}
+
+ul#sidebar-nav a:hover {
+    font-weight: 500 !important;
+    border-left: 1px solid #44ace8 !important;
+    margin-left: 0px;
+}
+
+ul#sidebar-nav ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul#sidebar-nav ul li a {
+    padding-left: 30px;
+    margin: 0px;
+}
+
+ul#sidebar-nav ul li a:hover {
+    padding-left: 29px;
+}
+
+ul#sidebar-nav li.active ul li.active a,
+ul#sidebar-nav li.active ul li.active a:hover,
+ul#sidebar-nav li.active ul li.active a:focus {
+    font-weight: 600 !important;
+    border-left: 1px solid #44ace8;
+    padding-left: 29px;
+    margin: 0px;
+}
+
+ul#sidebar-nav li {
+    list-style-type: none;
+}
+
+ul#sidebar-nav > li.active > a, ul#sidebar-nav > li.active > a:hover {
+    font-weight: 600 !important;
+}
+
+ul#sidebar-nav li.active ul a {
+    font-weight: normal;
+}
+
+ul#sidebar-nav li > ul {
+  display: none;
+}
+
+ul#sidebar-nav li.active > ul {
+  display: block;
+}
+
+ul#sidebar-nav li > ul a {
+    font-weight: normal;
+}
+
+
 .page-content {
     padding-bottom: 20px;
+    word-wrap: break-word;
 }
+
 /**
  * Footer
  */
