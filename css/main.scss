@@ -6,8 +6,10 @@
 $font-family-sans-serif: NotoSans, sans-serif !default;
 $navbar-height: 70px;
 $navbar-inverse-bg: #000000;
+$fa-font-path:'{{ "/css/fonts/font-awesome" | prepend: site.baseurl }}';
 
 @import "vendor/bootstrap";
+@import "vendor/font-awesome/font-awesome";
 @import "fonts";
 
 /**
@@ -41,7 +43,12 @@ h4 {
     border-bottom: 1px solid #000000; /* Or whatever color you want */
     text-decoration: none;
 }
-
+@media (max-width: 765px) {
+    .navbar-nav.navbar-right a {
+        width: 80%;
+        margin-left: 10%;
+    }
+}
 /**
  * Parallax
  */
