@@ -1,3 +1,1 @@
-.. warning:: This API endpoint is deprecated.  Please update your software
-to use :ref:`door43-v3`.
-
+.. warning:: This API endpoint is deprecated.  Please update your software to use the :ref:`door43`.

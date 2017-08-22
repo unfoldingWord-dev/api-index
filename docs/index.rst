@@ -5,20 +5,23 @@
 uW and Door43 API Information
 =============================
 
-The unfoldingWord project supports several APIs to provide access to our content.  Historical information is provided on this site, if you are writing new code, make sure you use the latest endpoints: :ref:`door43`, :ref:`dcs`, :ref:`td`.
+The unfoldingWord project supports several APIs to provide access to our content.  If you are a developer, please use the documentation here to understand how to interact with our data.
 
-
-Contents:
+Latest API Endpoints:
 
 .. toctree::
    :maxdepth: 2
 
    door43
    dcs
+   td
+   tk
 
 
-To Add:
-   * td
-   * tk
-   * ts
-   * uw
+Deprecated API Endpoints (don't use these for new code):
+
+.. toctree::
+   :maxdepth: 2
+
+   ts
+   uw
