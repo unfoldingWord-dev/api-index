@@ -36,7 +36,7 @@ Design
 ------
 
 * The catalog will be available at https://api.door43.org/v3/catalog.json. Where v3 is the API version. Initially this will be the sole endpoint.  A dynamic endpoint that returns only requested informaiton may be built later.
-* All timestamps follow the encoding scheme defined in the [W3CDTF profile of ISO 8601](https://www.w3.org/TR/NOTE-datetime).
+* All timestamps follow the encoding scheme defined in the `W3CDTF profile of ISO 8601 <https://www.w3.org/TR/NOTE-datetime>`_.
 * Content linked to within the catalog will be available predominantly (though not exclusively) from https://cdn.door43.org.
 * Keys must always be represented even when the value is optional. If the key is not needed/available the value may be empty.
 * Values that indicate file size are given in bytes.
@@ -53,8 +53,10 @@ Much of the catalog (see :ref:`door43-example` below) should be self explanatory
 * ``languages`` → ``resources`` → ``projects`` → ``categories`` indicates the hierarchy under which the project is to be displayed. For example: the project ``gen`` would be nested under the ``bible-ot`` category when viewed in an application. Localized titles for each category are available in ``languages`` → ``category_labels``.
 
 * ``languages`` → ``resources`` [→ ``projects``] → ``formats`` provides links to content in various media types. Formats may be presented at the ``resource`` level when containing content for all projects or the ``project`` level when containing a single project.
+
   * The ``format`` field indicates the type of content that is available for download. This is most commonly a zip archive with additional flags indicating the type of content within the archive:
-    * ``type`` this flag indicates the type of [Resource Container](http://resource-container.readthedocs.io/en/v0.2/container_types.html) (RC) represented. RCs are most often used by translation apps such as [translationStudio](http://ufw.io/ts).
+
+    * ``type`` this flag indicates the type of `Resource Container <http://resource-container.readthedocs.io/en/v0.2/container_types.html>`_ (RC) represented. RCs are most often used by translation apps such as `translationStudio <http://ufw.io/ts>`_.
     * ``content`` this flag gives the format of the content inside the RC.
     * ``conformsto`` this flag gives the version of the RC specification this RC is built on.
 
@@ -62,13 +64,13 @@ Much of the catalog (see :ref:`door43-example` below) should be self explanatory
 
 * version numbers in the urls such as ``v7`` indicate the version of the resource or asset. This is not the same as the api version seen in the catalog url.
 
-* ``languages`` → ``resources`` → ``projects`` → ``chunks_url``: provides a catalog that maps divisions in the text with various versification systems. See [API v3 Chunk Markers](https://github.com/unfoldingWord-dev/door43.org/wiki/API-v3-Chunk-Markers) for more information.
+* ``languages`` → ``resources`` → ``projects`` → ``chunks_url``: provides a catalog that maps divisions in the text with various versification systems. See ref:`door43-chunks` for more information.
 
 * ``languages`` → ``versification_labels``: provides human readable labels to the different versification systems available in the catalog. These labels may be used, for example, when a user imports raw content such as USFM and are given the opportunity to select the appropriate versification system.
 
 * ``languages`` → ``resources`` → ``modified``: gives the date the resource was last modified according to the translator.
 
-* \* → ``formats`` → ``modified``: gives the date of the most recent commit in [DCS](https://git.door43.org/).
+* \* → ``formats`` → ``modified``: gives the date of the most recent commit in `DCS <https://git.door43.org/>`_.
 * \* → ``formats`` → ``quality``: if appropriate this specifies the quality of the media such as bitrate or dpi.
 * \* → ``formats`` → ``chapters``: lists additional files for download broken up by chapter.
 * \* → ``formats`` → ``chapters`` → ``length``: if applicable, the length of the media file in seconds.
@@ -688,4 +690,51 @@ Example
           }
         }
       ]
+    }
+
+
+.. _door43-chunks:
+
+Chunk Markers
+-------------
+
+Chunks markers define how a book is to be chunked (that is, divided) according to a particular versification system.  They are available in the :ref:`door43` via the ``chunks_url`` key for each project.
+
+
+Definitions
+~~~~~~~~~~~
+
+* the ``versification-system-id`` matches the slug stored in the `Resource Container manifest <http://resource-container.readthedocs.io/en/latest/manifest.html>`_ as well as the label defined in the :ref:`door43`.
+
+* ``first_verses`` indicates the start of chunks in the given chapter. Chunks will include the subsequent verses up to but not including the next first verse.
+
+
+Example
+~~~~~~~
+
+Chunks are defined according to versification systems and are grouped accordingly
+
+.. include:: /includes/json_snippet.txt
+.. code-block:: json
+
+    {
+      "some-versification-system-id": [
+        {
+          "chapter": 1,
+          "first_verses": [1, 5, 8, 11, 13, 17, 20, 24, 28, 32, 34, 38, 41, 43, 46, 49, 51]
+        },
+        {
+          "chapter": 2,
+          "first_verses": [1, 3, 5, 9, 13, 16, 18, 21, 23, 25, 29, 34, 36, 39, 42, 45, 48, 50, 52, 54]
+        },
+        {
+          "chapter": 3,
+          "first_verses": [1, 4, 6, 10, 13, 15, 17, 19, 22]
+        },
+        {
+          "chapter": 4,
+          "first_verses": [1, 3, 5, 9, 11, 13, 17, 19, 21, 24, 27, 29, 32, 34, 39, 42]
+        }
+      ],
+      "another-versification-system-id": [...]
     }
