@@ -7,7 +7,10 @@ uW and Door43 API Information
 
 The unfoldingWord project supports several APIs to provide access to our content.  If you are a developer, please use the documentation here to understand how to interact with our data.
 
-Latest API Endpoints:
+Latest
+------
+
+*API Endpoints You Should Use*
 
 .. toctree::
    :maxdepth: 2
@@ -18,7 +21,10 @@ Latest API Endpoints:
    tk
 
 
-Deprecated API Endpoints (don't use these for new code):
+Deprecated
+----------
+
+*API Endpoints You Should Not Use*
 
 .. toctree::
    :maxdepth: 2
