@@ -41,8 +41,7 @@ You may optionally specify meta categories on a project. See the notes on the :r
 
 The sort field allows projects to be displayed in a sorted manner within the app. The sort value MUST be a numeric value. That is, it should be able to be parsed as an integer.
 
-The following is an example ``JSON`` snippet endpoint and may be used as a reference guide.
-
+.. include:: /includes/json_snippet.txt
 .. code-block:: json
 
     [
@@ -78,8 +77,7 @@ Optional meta in the project provides the ability to create soft/virtual categor
 
 The ``date_modified`` field in the language gets it's value from the most recent ``date_modified`` value in the :ref:`tS-resources`. Once again this allows the app to determine if updates are available for a particular language.
 
-The following is an example ``JSON`` snippet endpoint and may be used as a reference guide.
-
+.. include:: /includes/json_snippet.txt
 .. code-block:: json
 
     [
@@ -128,8 +126,7 @@ The ``date_modified`` field is updated any time the source, terms, or notes cata
 
 Included in each resource is status which indicates (among other things) the checking level of the resource. The app uses this to determine whether or not the resource is ready for use in the app. If there is only one resource it should be given the slug value “default” and the name can be left as an empty string.
 
-The following is an example ``JSON`` snippet endpoint and may be used as a reference guide.
-
+.. include:: /includes/json_snippet.txt
 .. code-block:: json
 
     [
@@ -169,8 +166,7 @@ The ``ref`` and ``title`` fields are optional. If left blank they will not be av
 
 There is a new format field that allows you to specify the format of the frame text. For example Bible translation projects are in the usx format. Valid options for format are currently usx and txt.
 
-The following is an example ``JSON`` snippet endpoint and may be used as a reference guide.
-
+.. include:: /includes/json_snippet.txt
 .. code-block:: json
 
     {

@@ -80,10 +80,8 @@ Much of the catalog (see :ref:`door43-example` below) should be self explanatory
 Example
 -------
 
-The following is an example ``JSON`` snippet endpoint and may be used as a reference guide.
-
+.. include:: /includes/json_snippet.txt
 .. warning:: The following ``JSON`` snippet has several parts removed so that it can be more concise.
-
 .. code-block:: json
 
     {

@@ -27,8 +27,7 @@ tK Catalog Endpoint
 
 The translationKeyboard app has a unified API endpoint at http://tk.unfoldingword.org/api/v1/keyboard/.
 
-The following is an example ``JSON`` snippet endpoint and may be used as a reference guide.
-
+.. include:: /includes/json_snippet.txt
 .. code-block:: json
 
     {
@@ -52,8 +51,7 @@ tK Keyboard Endpoint
 
 Keyboard layouts may be accessed via their ``id`` (from the above catalog), like this: ``http://tk.unfoldingword.org/api/v1/keyboard/[id]``.
 
-The following is an example ``JSON`` snippet endpoint and may be used as a reference guide.
-
+.. include:: /includes/json_snippet.txt
 .. code-block:: json
 
     {

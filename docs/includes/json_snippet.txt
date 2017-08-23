@@ -1,0 +1,1 @@
+.. tip:: The following is an example ``JSON`` snippet endpoint and may be used as a reference guide.
