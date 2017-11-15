@@ -35,7 +35,7 @@ The ``formats`` array will provide various media types that the resource is avai
 Design
 ------
 
-* The catalog will be available at https://api.door43.org/v3/catalog.json. Where v3 is the API version. Initially this will be the sole endpoint.  A dynamic endpoint that returns only requested informaiton may be built later.
+* The catalog is available at https://api.door43.org/v3/catalog.json, where v3 is the API version. Initially this will be the sole endpoint.  A dynamic endpoint that returns only requested information may be built later.
 * All timestamps follow the encoding scheme defined in the `W3CDTF profile of ISO 8601 <https://www.w3.org/TR/NOTE-datetime>`_.
 * Content linked to within the catalog will be available predominantly (though not exclusively) from https://cdn.door43.org.
 * Keys must always be represented even when the value is optional. If the key is not needed/available the value may be empty.
