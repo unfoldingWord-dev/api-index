@@ -8,7 +8,7 @@ Quick Links
 
 * API Endpoint: https://git.door43.org/
 * Browser Endpoint: https://git.door43.org/explore
-* Swagger Endpoint: https://git.door43.org/swagger
+* Swagger Endpoint: https://git.door43.org/api/swagger
 
 
 Description
@@ -28,4 +28,4 @@ DCS is built on `Gitea <https://github.com/go-gitea/gitea>`_ and follows their l
 Example
 -------
 
-Please consult the `Swagger API documentation <https://git.door43.org/swagger>`_ for our DCS instance.
+Please consult the `Swagger API documentation <https://git.door43.org/api/swagger>`_ for our DCS instance.
