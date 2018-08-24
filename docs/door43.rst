@@ -7,6 +7,7 @@ Quick Links
 -----------
 
 * API Endpoint: https://api.door43.org/v3/catalog.json
+* Subjects API Endpoint: https://api.door43.org/v3/subjects/pivoted.json
 * Browser Endpoint: https://git.door43.org/Door43-Catalog
 
 
@@ -683,3 +684,163 @@ Example
       ]
     }
 
+Catalog Subjects Endpoint
+~~~~~~~~~~~~~~~~~~~~
+
+Subjects layouts may be accessed via their ``subject`` (from the above catalog), like this: ``https://api.door43.org/v3/subjects/[subject].json``.
+
+.. include:: /includes/json_snippet.txt
+.. code-block:: json
+
+    [
+      {
+        "subject": "Greek_New_Testament",
+        "identifier": "Greek_New_Testament",
+        "language": "el-x-koine",
+        "resources": [
+          {
+            "checking": {
+              "checking_entity": [
+                "unfoldingWord"
+              ],
+              "checking_level": "2"
+            },
+            "comment": "",
+            "contributor": [
+              ...
+            ],
+            "creator": "unfoldingWord",
+            "description": "An open-licensed, lexically tagged, morphologically parsed critical Greek New Testament with full apparatus. It enables the global Church to have access to the original texts of the New Testament.",
+            "formats": [
+              {
+                "format": "application/zip; type=bundle content=text/usfm3 conformsto=rc0.2",
+                "modified": "2018-08-02T17:46:25+00:00",
+                "signature": "https://cdn.door43.org/el-x-koine/ugnt/v0.2/ugnt.zip.sig",
+                "size": 1465124,
+                "url": "https://cdn.door43.org/el-x-koine/ugnt/v0.2/ugnt.zip"
+              }
+            ],
+            "identifier": "ugnt",
+            "issued": "2018-08-02T00:00:00+00:00",
+            "modified": "2018-08-02T00:00:00+00:00",
+            "projects": [
+              {
+                "categories": [
+                  "bible-nt"
+                ],
+                "identifier": "mat",
+                "sort": 40,
+                "title": "Matthew",
+                "versification": "ufw"
+              }
+              ...
+            ],
+            "subject": "Greek New Testament",
+            "title": "unfoldingWord Greek New Testament",
+            "version": "0.2"
+          }
+        ],
+        "direction": "ltr",
+        "title": "Koine Greek"
+      }
+    ]
+
+
+You may also get a list of ``subject`` endpoints available from the index like this: ``https://api.door43.org/v3/subjects/index.json``.
+
+.. include:: /includes/json_snippet.txt
+.. code-block:: json
+
+    [
+      "https://api.door43.org/v3/subjects/Bible.json",
+      "https://api.door43.org/v3/subjects/Translation_Words.json",
+      "https://api.door43.org/v3/subjects/OBS_Translation_Questions.json",
+      "https://api.door43.org/v3/subjects/Open_Bible_Stories.json",
+      "https://api.door43.org/v3/subjects/Translation_Notes.json",
+      "https://api.door43.org/v3/subjects/Translation_Questions.json",
+      "https://api.door43.org/v3/subjects/OBS_Translation_Notes.json",
+      "https://api.door43.org/v3/subjects/Translation_Academy.json",
+      "https://api.door43.org/v3/subjects/Translation_Questions'.json",
+      "https://api.door43.org/v3/subjects/Greek_New_Testament.json"
+    ]
+
+For some applications it is more efficient to retrieve all the subject entries at once and parse them
+on the client. You can do receive the entire object at once here: ``https://api.door43.org/v3/subjects/pivoted.json``.
+
+.. include:: /includes/json_snippet.txt
+.. code-block:: json
+
+    {
+      "catalogs": [
+        {
+          "identifier": "langnames",
+          "modified": "2016-10-03",
+          "url": "https://td.unfoldingword.org/exports/langnames.json"
+        }
+        ...
+      ],
+      "subjects": [
+        {
+          "subject": "Bible",
+          "identifier": "Bible",
+          "language": "hi",
+          "resources": [
+            {
+              "checking": {
+                "checking_entity": [
+                  "John Smith"
+                ],
+                "checking_level": "3"
+              },
+              "comment": "",
+              "contributor": [
+                "John Smith",
+                ...
+              ],
+              "creator": "BCS",
+              "description": "A basic Bible lexicon that provides translators with clear, concise definitions and translation suggestions for every important word in the Bible. It provides translators and checkers with essential lexical information to help them make the best possible translation decisions.",
+              "identifier": "tw",
+              "issued": "2018-02-23T00:00:00+00:00",
+              "modified": "2018-06-08T00:00:00+00:00",
+              "projects": [
+                {
+                  "categories": [],
+                  "formats": [
+                    {
+                      "format": "application/zip; type=dict content=text/markdown conformsto=rc0.2",
+                      "modified": "2018-06-08T19:49:08+00:00",
+                      "signature": "https://cdn.door43.org/hi/tw/v8.1/bible.zip.sig",
+                      "size": 1196446,
+                      "url": "https://cdn.door43.org/hi/tw/v8.1/bible.zip"
+                    }
+                  ],
+                  "identifier": "bible",
+                  "sort": 0,
+                  "title": "translationWords",
+                  "versification": null
+                }
+              ],
+              "publisher": "BCS",
+              "relation": [
+                "hi/ulb",
+                "hi/tn",
+                "hi/tq"
+              ],
+              "rights": "CC BY-SA 4.0",
+              "source": [
+                {
+                  "identifier": "tw",
+                  "language": "en",
+                  "version": "8"
+                }
+              ],
+              "subject": "Translation Words",
+              "title": "translationWords",
+              "version": "8.1"
+            }
+          ],
+          "direction": "ltr",
+          "title": "हिन्दी"
+        }
+      ]
+    }
