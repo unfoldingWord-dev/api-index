@@ -685,7 +685,7 @@ Example
     }
 
 Catalog Subjects Endpoint
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Subjects layouts may be accessed via their ``subject`` (from the above catalog), like this: ``https://api.door43.org/v3/subjects/[subject].json``.
 
