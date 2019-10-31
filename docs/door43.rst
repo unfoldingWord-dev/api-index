@@ -7,6 +7,7 @@ Quick Links
 -----------
 
 * API Endpoint: https://api.door43.org/v3/catalog.json
+* Subjects List Endpoint: https://api.door43.org/v3/subjects/index.json
 * Subjects API Endpoint: https://api.door43.org/v3/subjects/pivoted.json
 * Browser Endpoint: https://git.door43.org/Door43-Catalog
 
