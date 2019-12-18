@@ -3,6 +3,8 @@
 translationKeyboard API
 =======================
 
+.. warning:: This API endpoint is no longer available.  Please try `Keyman <https://keyman.com/>`_ instead.
+
 Quick Links
 -----------
 
