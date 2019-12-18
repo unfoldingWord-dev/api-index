@@ -18,8 +18,6 @@ Latest
    door43
    dcs
    td
-   tk
-
 
 Deprecated
 ----------
@@ -31,3 +29,4 @@ Deprecated
 
    ts
    uw
+   tk
